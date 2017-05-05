@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard
+END
+login_message.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/login_message.html
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/footer.html
+END
+meta.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/meta.html
+END
+header.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/header.html
+END
+home.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/home.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/login.html
+END
+master.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/master.html
+END

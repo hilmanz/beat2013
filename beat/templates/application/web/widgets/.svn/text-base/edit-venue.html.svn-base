@@ -1,0 +1,68 @@
+{literal}
+<style>
+#selectfid{width:170px}
+</style>
+{/literal}
+<div id="theContainer2" class="galleryPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+                <div class="theBox">
+                    <div class="theBox-title">
+                        <h2 class="fl">Edit Venue</h2>
+                       
+                    </div><!-- /.theBox-title -->
+                    <div class="theBox-content">
+                        <div class="forms">
+                            <form id="create-challenge" method="POST" action="{$basedomain}plan/create" enctype="multipart/form-data" >
+                                <div class="rows2">
+                                    <label>Venue Name</label>
+                                    <input type="text" name="title" class="full-width" value="Senayan City"/>
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>Venue Alias</label>
+                                    <input type="text" name="title" class="full-width" value="Sency"/>
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>Province</label>
+									 <select type="text" name="fid" class="styled"  >
+											<option value="0" > DKI Jakarta </option>	
+									</select>
+                                </div><!-- /.rows2 -->
+                                    <label>City</label>
+									 <select type="text" name="fid" class="styled"  >
+											<option value="0" > Jakarta Selatan </option>	
+									</select>
+                                <div class="rows2">
+                                    <label>Category</label>
+									 <select type="text" name="fid" class="styled"  >
+											<option value="0" > Music </option>	
+									</select>
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>Latitude</label>
+                                    <input type="text" name="title" class="full-width" value="-6.229746,106.829518"/>
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>Longtitude</label>
+                                    <input type="text" name="title" class="full-width" value="0.569961,0.968857"/>
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label class="fl">&nbsp;</label>
+                                    <a class="button fl" onCLick="location.href='{$basedomain}plan'" style="margin:20px 10px 0 0;">Publish</a>
+                                    <a class="button fl" onCLick="location.href='{$basedomain}plan'">Unpublish</a>
+                                    <input type="hidden" name="type" value="5"/>
+                                    <input type="hidden" name="upload" value="Submit"/>
+                                    <input type="submit" value="Save" class="button fr" />
+                                </div><!-- /.rows2 -->
+                            </form>
+                        </div> <!-- /.forms -->
+                    </div> <!-- /.theBox-content -->
+                </div> <!-- /.theBox -->
+            </div><!-- /.col-content -->
+            <div class="col-sidebar">
+				{include file="application/web/widgets/sidebar-widget.html"}
+            </div><!-- /.col-sidebar -->
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

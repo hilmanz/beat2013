@@ -1,0 +1,111 @@
+<div id="theContainer" class="inboxPage">
+    <div class="theContainer">
+        <div class="head-title">
+            <h1 class="fl">{if $act==commentList}Comment Moderation{else}Post Moderation{/if}</h1>
+			{*}
+            <div class="short2 fr">
+                <form method="POST" action="{$basedomain}{if $timeline}moderation{else}moderation/commentList{/if}" id="shorter">
+                        <label>Moderation Type</label>
+                        <select class="styled">
+                            <option>Comment</option>
+                            <option>Post</option>
+                            <option>Venue</option>
+                        </select>
+                </form>
+            </div><!-- /.short -->
+			{/*}
+            <a href="{$basedomain}{if $act==commentList}moderation{else}moderation/commentList{/if}" class="fr button2">{if $act==commentList}Post Moderation{else}Comment Moderation{/if}</a>
+        </div> <!-- /.head-title -->
+        <div class="short2">
+            <form method="POST" action="{$basedomain}{if $timeline}moderation{else}moderation/commentList{/if}" id="shorter">
+                <div class="date-range fl">
+					<label>Periode</label>
+					<input type="text" class="half-width" id="datepicker" name="startdate" value="{$startdate}"/>
+					<span>to</span>
+					<input type="text" class="half-width" id="datepicker2" name="enddate" value="{$enddate}"/>
+                </div>
+				{*}
+                <div class="Short-By fl">
+					<label>Short By</label>
+					<select class="styled">
+                    	<option>A</option>
+                    	<option>B</option>
+                    	<option>C</option>
+                    </select>
+                </div>
+				{/*}
+                <div class="input-append fr">
+                    <input type="text" size="16" id="search" name="search" class="span2" onfocus="if(this.value=='Search...')this.value='';" onblur="if(this.value=='')this.value='Search...';" value="{if $search}{$search}{else}Search...{/if}"/>
+					<input type="hidden" name="filter" value="searchform"/>
+					<button type="submit" class="btn">Go!</button>
+                </div>
+            </form>
+        </div><!-- /.short -->
+        <div class="theContent">
+			{if $timeline}
+				{section loop=$timeline name=i}
+				<div class="rows">
+					<a href="{$basedomain}{$pages}/detail/{$timeline[i].id}" class="thumbsmall fl"><img src="{$basedomain}public_assets/user/photo/{if $timeline[i].author.img}small_{$timeline[i].author.img}{else}default.jpg{/if}" /></a>
+					<div class="entries fl">
+						<h3 class="username fl">{$timeline[i].author.name|capitalize}</h3>
+						{*}<span class="date fr">{$timeline[i].posted_date|date_format:"%e %B %Y"} {$timeline[i].posted_date|date_format:$time.time}</span>{/*}
+						<span class="date fr">{$timeline[i].posted_date}</span>
+						<p>{$timeline[i].title|truncate:100}</p>
+					</div> <!-- /.entries -->
+					<a class="icons icon_expand" href="{$basedomain}{$pages}/detail/{$timeline[i].id}">&nbsp;</a>
+					{*}{if $timeline[i].authorid == $user->id}{/*}
+					<a class="icons icon_delete showPopup" href="{$basedomain}{$pages}/unpublish/{$timeline[i].id}" onclick="return confirm('Are you sure you want to delete this?')">&nbsp;</a>
+					{*}{/if}{/*}
+				</div><!-- /.rows -->
+				{/section}
+			{/if}
+			
+			{if $comment}
+				{if $comment}
+					{section loop=$comment name=i}
+					<div class="rows">
+						<a href="{$basedomain}moderation/detail/{$comment[i].contentid}" class="thumbsmall fl"><img src="{$basedomain}public_assets/user/photo/{if $comment[i].img}small_{$comment[i].img}{else}default.jpg{/if}" /></a>
+						<div class="entries fl">
+							<h3 class="username fl">{$comment[i].name|capitalize}</h3>
+							<span class="date fr">{$comment[i].date}</span>
+							<p>{$comment[i].comment}</p>
+						</div> <!-- /.entries -->
+						<a class="icons icon_expand" href="{$basedomain}moderation/detail/{$comment[i].contentid}">&nbsp;</a>
+						{*}{if $comment[i].userid == $user->id} {/*}
+							<a class="icons icon_delete showPopup" href="{$basedomain}{$pages}/uncomment/{$comment[i].id}" onclick="return confirm('Are you sure you want to delete this?')">&nbsp;</a>
+						{*}{/if}{/*}
+					</div><!-- /.rows -->
+					{/section}
+				{else}
+					Tidak ada Komentar Moderasi
+				{/if}
+			{/if}
+            {*} INI BUAT VENUE YAAAA
+			{if $timeline}
+				{section loop=$timeline name=i}
+				<div class="rows">
+					<div class="entries-full fl">
+						<h3 class="venueName fl">{$timeline[i].author.name|capitalize}</h3>
+						<p class="venueAddress">Jl. Kemang Timur Raya No.100 E Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. 15415</p>
+					</div> <!-- /.entries -->
+					<a class="icons icon_expand" href="{$basedomain}{$pages}/detail/{$timeline[i].id}">&nbsp;</a>
+					<a class="icons icon_delete showPopup" href="{$basedomain}{$pages}/unpublish/{$timeline[i].id}" onclick="return confirm('Are you sure you want to delete this?')">&nbsp;</a>
+                    <a class="label-green">Valid</a>
+                    <a class="label-red">Not Valid</a>
+				</div><!-- /.rows -->
+				{/section}
+			{/if}
+            {/*}
+        </div> <!-- /.theContent -->
+		{if $timeline}
+			<div class="paging" id="pagingpostmoderation"></div> <!-- END .paging -->
+		{/if}
+		{if $comment}
+			<div class="paging" id="pagingcommentmoderation"></div> <!-- END .paging -->
+		{/if}
+		<script>
+			getpaging(0,{$total},"pagingpostmoderation","paging_ajax_postmoderation",10);
+			getpaging(0,{$total},"pagingcommentmoderation","paging_ajax_commentmoderation",10);
+		</script>
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/apps
+END
+user.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/apps/user.html
+END
+demographic.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/apps/demographic.html
+END
+activities.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/apps/activities.html
+END
+analytic.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/beat2013/!svn/ver/2/trunk/beat/templates/application/dashboard/apps/analytic.html
+END

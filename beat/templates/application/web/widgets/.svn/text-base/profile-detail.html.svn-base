@@ -1,0 +1,42 @@
+<div id="theContainer2" class="baPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+                <div class="theBox">
+                    <div class="theBox-title">
+                        <h2 class="fl blue">Profile Detail</h2>
+                        <div class="navPaging fr">
+                            <a class="icons prev" href="{$basedomain}home">&nbsp;</a>
+                        </div><!-- /.navPaging -->
+                    </div><!-- /.theBox-title -->
+                    <div class="user-container">
+                        <div class="thumb-user-big">
+                            <img src="{$userprofile.image_full_path}" />
+                        </div> <!-- /.thumb-user-big -->
+                        <div class="user-info">
+							
+                            <h4 class="username">{$userprofile.name}</h4>
+                           
+							<span class="lates-date">Latest engagement: {$userprofile.plan.lists[0].posted_date|date_format:"%e %B %Y"}</span>
+                            <span class="type-user">Type: {if $userprofile.n_status==1} Personal 
+						   {elseif $userprofile.n_status==0} Another Status
+						   {else}
+						   {/if}</span>
+							
+                        </div> <!-- /.user-info -->
+                    </div> <!-- /.user-container -->
+                    <div class="user-detail">
+                      <span class="lates-date">Nick Name : {$userprofile.nickname}</span>
+                      <span class="lates-date">Register Date : {$userprofile.register_date|date_format:"%e %B %Y"}</span>
+                      <span class="lates-date">User Name : {$userprofile.username}</span>
+                      <span class="lates-date">Gender : {$userprofile.sex}</span>
+                      <span class="lates-date">Email : {$userprofile.email}</span>
+                      <span class="lates-date">Street Name : {$userprofile.StreetName}</span>
+                      <span class="lates-date">Phone Number : {$userprofile.phone_number}</span>
+                    </div> <!-- /.user-detail -->
+                </div> <!-- /.theBox -->
+            </div><!-- /.col-content -->
+          
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

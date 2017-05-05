@@ -1,0 +1,92 @@
+ 
+	<script src="{$basedomain}assets/js/chart/exporting.js"></script>
+	
+	<script src="{$basedomain}assets/js/chart/highcharts2.js"></script>
+	
+
+<script type="text/javascript">
+	
+		var thedata = {$entourage};
+		console.log(thedata.datetimes);
+		console.log(thedata.data[1]);
+		
+var pendingdata = thedata.data[1];
+var pendingdata2 = thedata.data[2];
+
+
+var pendingdatavalue = new Array();
+var pendingdatavalue2 = new Array();
+
+var pendingdatacategory = new Array(); 
+
+{literal}
+for (var keypending in pendingdata){
+pendingdatavalue.push(parseInt(pendingdata[keypending])); 
+pendingdatacategory.push(String(keypending));
+}
+
+for (var keypending in pendingdata2){
+pendingdatavalue2.push(parseInt(pendingdata2[keypending])); 
+}
+	$(function () {
+    $('#container').highcharts({
+		 xAxis: {
+                 categories: pendingdatacategory
+            },yAxis: {
+                title: {
+                    text: 'Acquisition'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#0088cc'
+                }]
+            },  title: {
+                text: 'Entourage Acquisition Achievement',
+                x: -20 //center
+            },credits:false
+			,exporting: {
+         enabled: false
+},
+        series: [{
+			name: 'Accepted',
+            data: pendingdatavalue
+        }, {
+			name: 'Rejected',
+            data: pendingdatavalue2
+        }]
+    });
+
+
+    // the button action
+    var chart = $('#container').highcharts(),
+        $button = $('#button');
+    $button.click(function() {
+        var series = chart.series[0];
+        if (series.visible) {
+            series.hide();
+            $button.html('Accepted');
+        } else {
+            series.show();
+            $button.html('Accepted');
+        }
+    });
+	
+	    // the button action
+    var chart = $('#container').highcharts(),
+        $button = $('#button2');
+    $button.click(function() {
+        var series = chart.series[1];
+        if (series.visible) {
+            series.hide();
+            $button.html('Rejected');
+        } else {
+            series.show();
+            $button.html('Rejected');
+        }
+    });
+	
+});
+{/literal}
+</script>
+<div id="container" style="min-width: 517px; height: 400px; margin: -10 auto"><br></div>

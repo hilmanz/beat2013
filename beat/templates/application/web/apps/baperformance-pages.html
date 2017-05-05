@@ -1,0 +1,65 @@
+<div id="theContainer2" class="baPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+                <div class="darkBox">
+                    <div class="darkBox-title">
+                        <!-- <h2>Entourage Acquisition Achievements</h2> -->
+                    </div><!-- /.darkBox-title -->
+                    <div class="shorter">
+                      <a href="#" id="button" class="button3 btn-green fl">Accepted</a>
+                        <a href="#" id="button2" class="button3 btn-orange fl">Rejected</a>
+                    	<a href="{$basedomain}home/entourageList" class="icons icon-button-people fl">&nbsp;</a>
+                        <div class="col-period fl">
+                            <label class="fl">Periode</label>
+                            <input type="text" class="half-width" id="datepicker">
+                            <span>to</span>
+                            <input type="text" class="half-width" id="datepicker">
+                        </div><!-- /.col-period -->
+                    </div><!-- /.shorter -->
+                    <div class="darkBox-content">
+                    	{$acquisition}
+                    </div> <!-- /.darkBox-content -->
+                </div> <!-- /.darkBox -->
+                <div class="rows2">
+                    <div class="darkBox col3s">
+<!--                         <div class="darkBox-title2">
+                            <h3>Age Relevancy</h3>
+                        </div><!-- /.darkBox-title -->
+                      <div class="darkBox-content">
+                    		{$age_relevancy}
+                        </div> <!-- /.darkBox-content -->
+                    </div> <!-- /.darkBox -->
+                    <div class="darkBox col3s">
+                       <!--  <div class="darkBox-title2">
+                            <h3>Brand Preference Relevancy</h3>
+                        </div><!-- /.darkBox-title --> 
+                        <div class="darkBox-content">
+                    			{$brand_preference_relevancy}
+                        </div> <!-- /.darkBox-content -->
+                    </div> <!-- /.darkBox -->
+                    <div class="darkBox col3s">
+                        <!-- <div class="darkBox-title2">
+                            <h3>Gender</h3>
+                        </div><!-- /.darkBox-title -->
+                        <div class="darkBox-content darkBox-title2">
+                    		  {$gender}
+                        </div> <!-- /.darkBox-content -->
+                    </div> <!-- /.darkBox -->
+                </div><!-- /.rows2 -->
+            </div><!-- /.col-content -->
+            <div class="col-sidebar">
+            	<div class="selectBA">
+                    <form>
+                        <select class="styled">
+							<option value="0" > Select BA </option>
+                            <option value="{$v.id}" > {foreach from=$social key=k item=v}
+							{if $v.ftype==1}{$v.name} {$v.last_name} </option>{/if}
+							{/foreach}
+                        </select>
+                    </form>
+                </div><!-- /.selectBA -->
+            </div><!-- /.col-sidebar -->
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

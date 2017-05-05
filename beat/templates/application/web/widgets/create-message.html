@@ -1,0 +1,44 @@
+{literal}
+<style>
+#selectrecipientid{width:170px}
+</style>
+{/literal}
+<div id="theContainer2" class="brandPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+                <div class="theBox">
+                    <div class="theBox-title">
+                        <h2 class="fl">Create Message</h2>
+           		</div><!-- /.theBox-title -->
+                    <div class="theBox-content">
+                        <div class="forms">
+                            <form id="create-challenge" method="POST" action="{$basedomain}inbox/reply" >	
+								 <div class="rows2">
+								 <label>Send To</label> 
+									<select type="text" name="recipientid" class="recipientid styled" >
+											<option value="0" > Pick Recepient </option>
+											{foreach from=$social key=k item=v}
+												{if $v.ftype==1}<option value="{$v.id}" > {$v.name} {$v.last_name} </option>{/if}
+											{/foreach}	
+									</select>
+								 </div>
+                                <div class="rows2">
+                                    <label>Detail</label>
+                                    <textarea  name="message" class="full-width" rows="5"></textarea>
+                                </div><!-- /.rows2 -->
+                             
+                                <div class="rows2">
+                                    <label class="fl">&nbsp;</label>
+                                   
+                                    <input type="submit" value="SEND" class="button fr" />
+                                </div><!-- /.rows2 -->
+                            </form>
+                        </div> <!-- /.forms -->
+                    </div> <!-- /.theBox-content -->
+                </div> <!-- /.theBox -->
+            </div><!-- /.col-content -->
+           
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

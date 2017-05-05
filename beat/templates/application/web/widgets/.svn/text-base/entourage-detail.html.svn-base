@@ -1,0 +1,96 @@
+<div id="theContainer2" class="baPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+	
+			   <div class="theBox">  
+                    <div class="theBox-title">
+                        <h2 class="fl blue">Entourages</h2>
+                        <div class="navPaging fr">
+                            <a class="icons prev" href="{$basedomain}entourage">&nbsp;</a>
+                        </div><!-- /.navPaging -->
+                    </div><!-- /.theBox-title -->
+                    <div class="user-container">
+                        <div class="thumb-user-big">
+                           <img src="{$assets_domain}content/{$userprofile.img}" />
+                        </div> <!-- /.thumb-user-big -->
+                        <div class="user-info">
+                            <h4 class="username">{$userprofile.name}</h4>
+							<span class="lates-date">Latest engagement: {$userprofile.register_date|date_format:"%e %B %Y"}</span>
+                            <span class="type-user">Type:{if $userprofile.n_status==1}Personal
+						   {elseif $userprofile.n_status==0}  Another Status
+						   {else}
+						   {/if}</span>
+							
+                        </div> <!-- /.user-info --> 
+                    </div> <!-- /.user-container -->
+                    <div class="user-detail">
+                        <h4>Number of engagement:</h4>
+                        <p>{$userprofile.referrerbybrand}</p>
+                        <h4>Engagement date:</h4>
+                        <p>
+                        <span>12/04/13 - Personal@location</span>
+                        <span>20/04/13 - Co-creation@location</span>
+                        <span>12/04/13 - Personal@location</span>
+                        <span>20/04/13 - Co-creation@location</span>
+                        <span>12/04/13 - Personal@location</span>
+                        </p>
+                        <h4>Brand Preference:</h4>
+                        <ol>
+                        <li>
+						   {if $userprofile.Brand1_ID==0000}OTHERS
+						   {elseif $userprofile.Brand1_ID==0002}  ARDATH 
+						   {elseif $userprofile.Brand1_ID==0004}  MARLBORO   
+						   {elseif $userprofile.Brand1_ID==0011}  CLAS MILD   
+						   {elseif $userprofile.Brand1_ID==0014}  COUNTRY 
+						   {elseif $userprofile.Brand1_ID==0017}  DJARUM BLACK TEA
+						   {elseif $userprofile.Brand1_ID==0018}  DJARUM BLACK CAPPUCINO
+						   {elseif $userprofile.Brand1_ID==0024}  DJARUM SUPER   
+						   {elseif $userprofile.Brand1_ID==0027}  DJI SAM SOE KRETEK MAGNUM 
+						   {elseif $userprofile.Brand1_ID==0028}  DJI SAM SOE SUPER PREMIUM   
+						   {elseif $userprofile.Brand1_ID==0029}  DUNHILL
+						   {elseif $userprofile.Brand1_ID==0033}  GUDANG GARAM INTERNATIONAL FILTER
+						   {elseif $userprofile.Brand1_ID==0039}  GUDANG GARAM SURYA  
+						   {elseif $userprofile.Brand1_ID==0040}  GUDANG GARAM SURYA PRO
+						   {elseif $userprofile.Brand1_ID==0041}  GUDANG GARAM SURYA SIGNATURE
+						   {elseif $userprofile.Brand1_ID==0042}  KANSAS  
+						   {elseif $userprofile.Brand1_ID==0043} KENT
+						   {elseif $userprofile.Brand1_ID==0044}  LA LIGHTS   
+						   {elseif $userprofile.Brand1_ID==0046}  LUCKY STRIKE   
+						   {elseif $userprofile.Brand1_ID==0053} SAMPOERNA HIJAU    
+						   {else}
+						   {/if}
+						</li>
+                        <li>
+						   {if $userprofile.Brand1_ID==0000}OTHERS
+						   {elseif $userprofile.Brand1_ID==0002}  ARDATH 
+						   {elseif $userprofile.Brand1_ID==0004}  MARLBORO   
+						   {elseif $userprofile.Brand1_ID==0011}  CLAS MILD   
+						   {elseif $userprofile.Brand1_ID==0014}  COUNTRY 
+						   {elseif $userprofile.Brand1_ID==0017}  DJARUM BLACK TEA
+						   {elseif $userprofile.Brand1_ID==0018}  DJARUM BLACK CAPPUCINO
+						   {elseif $userprofile.Brand1_ID==0024}  DJARUM SUPER   
+						   {elseif $userprofile.Brand1_ID==0027}  DJI SAM SOE KRETEK MAGNUM 
+						   {elseif $userprofile.Brand1_ID==0028}  DJI SAM SOE SUPER PREMIUM   
+						   {elseif $userprofile.Brand1_ID==0029}  DUNHILL
+						   {elseif $userprofile.Brand1_ID==0033}  GUDANG GARAM INTERNATIONAL FILTER
+						   {elseif $userprofile.Brand1_ID==0039}  GUDANG GARAM SURYA  
+						   {elseif $userprofile.Brand1_ID==0040}  GUDANG GARAM SURYA PRO
+						   {elseif $userprofile.Brand1_ID==0041}  GUDANG GARAM SURYA SIGNATURE
+						   {elseif $userprofile.Brand1_ID==0042}  KANSAS  
+						   {elseif $userprofile.Brand1_ID==0043} KENT
+						   {elseif $userprofile.Brand1_ID==0044}  LA LIGHTS   
+						   {elseif $userprofile.Brand1_ID==0046}  LUCKY STRIKE   
+						   {elseif $userprofile.Brand1_ID==0053} SAMPOERNA HIJAU    
+						   {else}
+						   {/if}
+						</li>
+                        </ol>
+                    </div> <!-- /.user-detail --> 
+               </div> <!-- /.theBox -->
+		
+            </div><!-- /.col-content -->
+           
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

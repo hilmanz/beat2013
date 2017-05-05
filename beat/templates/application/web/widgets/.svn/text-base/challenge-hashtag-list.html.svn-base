@@ -1,0 +1,28 @@
+<div class="sideRight">
+	<div class="greyBox">
+		<div class="head-row">
+			<a href="#" class="fl tagslist">{$tags}</a>
+			<span class="fr coversation-total">{$total_hashtag} Conversations</span>
+		</div><!-- /."head-row -->
+		{if $challengeHashtag}
+			{section loop=$challengeHashtag name=i}
+				<div class="rows">
+					<a href="#" class="thumbsmall fl"><img src="{$basedomain}public_assets/user/photo/{if $challengeHashtag[i].author.img}small_{$challengeHashtag[i].author.img}{else}default.jpg{/if}" /></a>
+					<div class="entries fl">
+						<h3 class="username fl">{$challengeHashtag[i].author.name|capitalize}</h3>
+						<span class="date fr">{$challengeHashtag[i].posted_date}</span>
+						<p>{$challengeHashtag[i].content|truncate:50}</p>
+						<a href="{$basedomain}challenge/detailHashtag/{$challengeHashtag[i].id}/{$cidStr}/{$challengeHashtag[i].tags}" class="seedetail">See Detail &raquo;</a>
+					</div> <!-- /.entries -->
+				</div><!-- /.rows -->
+			{/section}
+		{/if}
+	</div><!-- /.greyBox -->
+		<div class="paging" id="pagingchallengeHashtag"></div> <!-- END .paging -->
+		<script>
+			var tags = '{$tags}';
+			var total_hashtag = '{$total_hashtag}';
+			var cidStr = '{$cidStr}';
+			getpaging(0,{$total_hashtag},"pagingchallengeHashtag","paging_ajax_challengeHashtag",3);
+		</script>
+</div><!-- /.sideRight -->

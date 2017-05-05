@@ -1,0 +1,40 @@
+<div id="theContainer2" class="baPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+                <div class="darkBox mb20">
+                    <div class="darkBox-title">
+                        <h2 class="fl">Entourages</h2>
+                        <div class="shorter">
+                        	<form>
+                            	<input type="radio" class="styled" name="short" />
+                                <span>All</span>
+                            	<input type="radio" class="styled" name="short" />
+                                <span> Approved</span>
+                            	<input type="radio" class="styled" name="short" />
+                                <span>Rejected</span>
+                            	<input type="radio" class="styled" name="short" />
+                                <span>Pending</span>
+                            	<input type="radio" class="styled" name="short" />
+                                <span>Engagement</span>
+                            </form>
+                        </div><!-- /.shorter -->
+                    </div><!-- /.darkBox-title -->
+                </div> <!-- /.darkBox -->
+               {$entourage_list}
+            </div><!-- /.col-content -->
+            <div class="col-sidebar">
+            	<div class="selectBA">
+                    <form>
+                        <select class="styled">
+							<option value="0" > Select BA </option>
+                            <option value="{$v.id}" > {foreach from=$social key=k item=v}
+							{if $v.ftype==1}{$v.name} {$v.last_name} </option>{/if}
+							{/foreach}
+                        </select>
+                    </form>
+                </div><!-- /.selectBA -->
+            </div><!-- /.col-sidebar -->
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

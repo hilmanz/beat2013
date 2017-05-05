@@ -1,0 +1,76 @@
+<div id="theContainer" class="challengePage">
+    <div class="theContainer">
+        <div class="head-title">
+			<a href="{$basedomain}{$pages}" class="btnback fl"></a>
+            <div class="navPaging fr">
+            	 {*}
+					<a class="icons prev" href="#">&nbsp;</a>
+					<a class="icons next" href="#">&nbsp;</a>
+				{/*}
+            </div><!-- /.navPaging -->
+        </div> <!-- /.head-title -->
+        <div class="theContent">
+			<div class="rows last-child">
+				<div class="entry-details">
+					<div class="head-title">
+						<h1 class="fl">Create Challenge </h1>
+					   {*} <span class="date fr">12/05/2013</span> {/*}
+					</div> <!-- /.head-title -->
+					<div class="forms">
+						<form id="create-challenge" METHOD="POST" action="{$basedomain}{$pages}/create">
+							<div class="rows">
+								<label>Name</label>
+								<input type="text" name="title" class="full-width" />
+							</div><!-- /.rows -->
+							<div class="rows">
+								<label>Periode</label>
+								<input type="text" name="posted_date" class="half-width" id="datepicker">
+								<span>to</span>
+								<input type="text" name="expired_date" class="half-width" id="datepicker2">
+							</div><!-- /.rows -->
+							<div class="rows">
+								<label>Detail</label>
+								<textarea name="desc" class="full-width"></textarea>
+							</div><!-- /.rows -->
+							<div class="rows">
+								<label>Parameter</label>
+								<input type="text" name="tags" class="full-width" />
+							</div><!-- /.rows -->
+							<div class="rows">
+								<label>Reward</label>
+								{*}
+								<input type="radio" class="styled" />
+								<span class="label-radio">Badge</span>									
+								<input type="radio" class="styled" checked />									
+								<span class="label-radio">Point</span>
+								{/*}
+								<input type="text" name="prize" onfocus="if(this.value=='Set Point')this.value='';" onblur="if(this.value=='')this.value='Set Point';" value="Set Point" class="half-width" />
+							</div><!-- /.rows -->
+							{*}
+							<div class="rows">
+								<label>Recipient</label>
+								<button class="ico icon_circletag"></button>
+							</div><!-- /.rows -->
+							{/*}
+							<div class="rows">
+								 <label>Recipient</label>
+								<select type="text" name="fid styled" class="recipientid" >
+								<option value="0" > Pick Recepient </option>
+								{foreach from=$social key=k item=v}
+								{if $v.ftype==1}<option value="{$v.id}" > {$v.name} {$v.last_name} </option>{/if}
+								{/foreach} 
+								</select>
+							</div><!-- /.rows -->
+							<div class="rows">
+								<button class="button">Discard</button>
+								<input type="hidden" name="type" value="6"/>
+								<input type="hidden" name="upload" value="simpan"/>
+								<input type="submit" value="Save" class="button" />
+							</div><!-- /.rows -->
+						</form>
+					</div> <!-- /.forms -->
+				</div> <!-- /.entry-details -->
+			</div><!-- /.rows -->
+        </div> <!-- /.theContent -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

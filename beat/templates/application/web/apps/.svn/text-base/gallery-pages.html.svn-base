@@ -1,0 +1,77 @@
+<div id="theContainer" class="galleryPage">
+    <div class="theContainer">
+			<form method="POST" action="{$basedomain}gallery" id="shorter">
+				<div class="head-title">
+							<h1 class="fl">Gallery</h1>
+							<div class="shorter fr">
+								<select class="styled">
+									<option>Select BA</option>
+									{foreach from=$social key=k item=v}
+										{if $v.ftype==1}<option value="{$v.id}" > {$v.name} {$v.last_name} </option>{/if}
+									{/foreach}	
+								</select>
+							</div><!-- /.shorter -->
+						</div> <!-- /.head-title -->
+					
+				<div class="short2">
+				   
+						<div class="date-range fl">
+						<label>Periode</label>
+						<input type="text" class="half-width" id="datepicker" name="startdate" value="{$startdate}"  />
+						<span>to</span>
+						<input type="text" class="half-width" id="datepicker2" name="enddate" value="{$enddate}" />
+						</div>
+						<div class="input-append fr">
+							<input type="text" size="16" name="search" id="search" class="span2" onfocus="if(this.value=='Search...')this.value='';" onblur="if(this.value=='')this.value='Search...';" value="{if $search}{$search}{else}Search...{/if}" /> 
+								<button type="submit" class="btn">Go!</button>
+						</div>
+				   
+				</div><!-- /.short -->
+				
+				<div class="head-title">
+					<div class="rowShorter">
+						<input type="radio" class="styled" name="brand" value='' {if !$brand}checked{/if} />
+										<span>All</span>
+										<input type="radio" class="styled" name="brand" value='2' {if $brand=='2'}checked{/if}  />
+										<span>Co Creation</span>
+										<input type="radio" class="styled" name="brand" value='3' {if $brand=='3'}checked{/if}  />
+										<span>Brand Event</span>
+					</div><!-- /.rowShorter -->
+				</div> <!-- /.head-title -->
+		 </form>
+        <div class="theContent">
+        	<div class="section">
+			{if $plandata.result}
+			 {foreach from=$plandata.result key=k item=v}
+            	<div class="col3">
+                	<div class="box-gallery">
+                    	<div class="imgbox">
+                        	<a href="{$basedomain}gallery/detail/{$v.id}" class="thumb-gallery"><img src="{$v.image_full_path}" width="100%" /></a>
+                            <div class="gallery-author">
+                                <a href="#" class="thumbsmall fl"><img src="{$v.author.image_full_path}" /></a><h1 class="fl username">{$v.author.name} {$v.author.last_name}</h1>
+                            </div> <!-- /.gallery-author -->
+                        </div> <!-- /.imgbox -->
+                        <div class="gallery-info">
+                        	<span class="desc1">{$v.title}</span>
+							<span class="desc2">{$v.totalgallery} Photos</span>
+                            <a class="icon-remove theicon" href="#">&nbsp;</a>
+                        </div> <!-- /.gallery-info -->
+                    </div> <!-- /.box-gallery -->
+                </div> <!-- /.col3 -->
+				{/foreach} 
+			{/if}	
+            	{*}
+                <div class="paging">
+                    <a href="#" class="prev">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="current">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#" class="next">&raquo;</a>
+                </div><!-- /.paging -->
+				{/*}
+            </div> <!-- /.section -->
+        </div> <!-- /.theContent -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

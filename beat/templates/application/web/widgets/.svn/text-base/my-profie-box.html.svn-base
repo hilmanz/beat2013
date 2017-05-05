@@ -1,0 +1,15 @@
+ <div class="thumb-user-big">
+    <a href="{$basedomain}home/profileDetail"><img src="{$userprofile.image_full_path}" /></a>
+</div> <!-- /.thumb-user-big -->
+<div class="user-info">
+   <h2 class="icons flag-white"><span>{$user->leaderdetail->pagetypename}</span></h2>
+  <a href="{$basedomain}home/profileDetail"> <h4 class="username">{$userprofile.name}</h4></a>
+   <span class="lates-date">Latest engagement: {$userprofile.plan.lists[0].posted_date|date_format:"%e %B %Y"}</span>
+   <span class="type-user">Type: 
+   {if $userprofile.n_status==1} Personal 
+   {elseif $userprofile.n_status==0} Pending
+   {elseif $userprofile.n_status==2} Rejected
+   {else}
+   {/if}
+   </span>
+</div> <!-- /.user-info -->

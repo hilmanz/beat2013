@@ -1,0 +1,9 @@
+<div class="darkBox-content2">
+{foreach from=$userprofile.inbox.result key=k item=v}
+		<div class="row3">
+			<span class="dates">{$v.datetime}</span>
+			<span class="user"><a href="{$basedomain}inbox/detail/{$v.parentid}">{$v.userdetail.name} {$v.userdetail.last_name}</a></span>
+			<p><a href="{$basedomain}inbox/detail/{$v.parentid}">{$v.message}</a></p>
+		</div><!-- /.row3 -->
+{/foreach}      
+</div> <!-- /.darkBox-content -->

@@ -1,0 +1,55 @@
+{literal}
+<style>
+#selectfid{width:170px}
+</style>
+{/literal}
+<div id="theContainer2" class="planPage">
+    <div class="theContainer2">
+        <div class="theContent2">
+        	<div class="col-content">
+                <div class="theBox">
+                    <div class="theBox-title">
+                        <h2 class="fl">{if $approver}BRAND{else}CO-CREATION{/if} Plan</h2>
+                      
+                    </div><!-- /.theBox-title -->
+                    <div class="theBox-content">
+                        <div class="forms">
+                         
+                                  <div class="rows2">
+                                    <label>Plan Name</label>
+                                    {$title}
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>Date</label>
+                                    {$dates}
+                                    <label class="label2">Time</label>
+                                    {$times}
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>Venue</label>
+                                    {$brief}
+                                </div><!-- /.rows2 -->
+                                <div class="rows2">
+                                    <label>{if $approver}PL{else}BA{/if} Name</label>
+							
+									{foreach from=$friendtags key=k item=v}											
+												{if $v.friendtype==1} {$v.name} {$v.last_name} {/if}
+									{/foreach}	
+                                </div><!-- /.rows2 -->
+                               <div class="rows2">
+									<img src="{$image_full_path}" />
+                                </div>
+                                <div class="rows2">
+                                  <a class="button fl" onCLick="location.href='{$basedomain}plan'" >Back</a>
+                                </div><!-- /.rows2 -->
+                          
+                        </div> <!-- /.forms -->
+                    </div> <!-- /.theBox-content -->
+                </div> <!-- /.theBox -->
+            </div><!-- /.col-content -->
+            <div class="col-sidebar">
+            		{include file="application/web/widgets/sidebar-widget.html"}
+            </div><!-- /.col-sidebar -->
+        </div> <!-- /.theContent2 -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

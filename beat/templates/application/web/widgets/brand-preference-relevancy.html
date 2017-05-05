@@ -1,0 +1,122 @@
+	<script src="{$basedomain}assets/js/chart/age/exporting.js"></script>
+	
+	<script src="{$basedomain}assets/js/chart/age/highcharts.js"></script>
+	
+ {literal}
+	<script>
+		$(function () {
+    
+        var colors = Highcharts.getOptions().colors,
+            categories = ['Our Brand', 'Other HMS/PMI','Competitor'],
+            name = 'Brand Relevancy',
+            data = [{
+                    y: 35.11,
+                    color: colors[3],
+                    drilldown: {
+                        name: 'Our Brand',
+                        categories: ['Our Brand'],
+                        data: [45.15],
+                        color: colors[3]
+                    }
+                }, {
+                    y: 25.94,
+                    color: colors[2],
+                    drilldown: {
+                        name: 'Other HMS/PMI',
+                        categories: ['Other HMS/PMI'],
+                        data: [10.12],
+                        color: colors[2]
+                    }
+                },{
+                    y: 18.14,
+                    color: colors[5],
+                    drilldown: {
+						name: 'Competitor',
+                        categories: ['Competitor'],
+                        data: [40.12],
+                        color: colors[5]
+                    }
+                }];
+    
+    
+        // Build the data arrays
+        var browserData = [];
+        var versionsData = [];
+        for (var i = 0; i < data.length; i++) {
+    
+            
+            // add version data
+            for (var j = 0; j < data[i].drilldown.data.length; j++) {
+                var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+                versionsData.push({
+                    name: data[i].drilldown.categories[j],
+                    y: data[i].drilldown.data[j],
+                    color: Highcharts.Color(data[i].color).brighten(brightness).get()
+                });
+            }
+        }
+    
+        // Create the chart
+        $('#container3').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Brand Relevancy'
+            },
+            
+            plotOptions: {
+                pie: {
+                    shadow: false,
+                    center: ['50%', '50%']
+                },
+				 series: {
+                dataLabels: {
+                    enabled: true,
+                    formatter: function() {
+                        return Math.round(this.percentage*100)/100 + ' %';
+                    },
+                    distance: -10,
+                    color:'white'
+                }
+            }
+            },
+			credits:false
+			, 
+			exporting: {
+					 enabled: false
+			},
+            tooltip: {
+                valueSuffix: '%'
+            },
+            series: [{
+                name: 'Brand',
+                data: browserData,
+                size: '70%',
+                dataLabels: {
+                    formatter: function() {
+                        return this.y > 3 ? this.point.name : null;
+                    },
+                    color: 'white',
+                    distance: 30
+                }
+            }, {
+                name: 'Brand Relevancy',
+                data: versionsData,
+                size: '80%',
+                innerSize: '50%',
+                dataLabels: {
+                    formatter: function() {
+                        // display only if larger than 1
+                        return this.y > 1 ? '<b>'+ this.point.name +':</b> '+ this.y +'%'  : null;
+                    }
+                }
+            }]
+        });
+    });
+    
+
+	</script>
+{/literal}
+<div id="container3" style="min-width: 190px; height: 190px; margin: 0 auto"></div>
+ 

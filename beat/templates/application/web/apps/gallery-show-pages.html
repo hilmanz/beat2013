@@ -1,0 +1,45 @@
+<div id="theContainer" class="galleryPage">
+    <div class="theContainer">
+        <div class="head-title">
+			<a href="{$basedomain}gallery/detail/{$plandata.result[0].id}" class="btnback fl"></a>
+            <div class="shorter fr">
+            	<select class="styled">
+                	<option>Select BA</option>
+                	{foreach from=$social key=k item=v}
+							{if $v.ftype==1}<option value="{$v.id}" > {$v.name} {$v.last_name} </option>{/if}
+					{/foreach}	
+                </select>
+            </div><!-- /.shorter -->
+        </div> <!-- /.head-title -->
+        <div class="head-title">
+			<h3 class="fl">{$plandata.result[0].title} - {$plandata.result[0].posted_date} @ {$plandata.result[0].brief}</h3>	
+            <a href="{$basedomain}gallery/addphoto/{$plandata.result[0].id}" class="button addPhoto fr">Add Photo</a>
+        </div> <!-- /.head-title -->
+        <div class="theContent">
+        	<div class="head-row">
+                 <a href="#" class="thumbsmall fl"><img src="{$plandata.result[0].author.image_full_path}" /></a><h1 class="fl username">{$plandata.result[0].author.name} {$plandata.result[0].author.last_name}</h1>
+				<a class="icon-remove theicon fr" href="#">&nbsp;</a>
+            </div>
+        	<div class="section">
+                <div id="slider" class="flexslider">
+                  <ul class="slides">
+				  {foreach from=$plandata.result key=k item=v}
+                    <li><a href="#" target="_blank">
+                        <img src="{$v.image_full_path}" alt="" style="height:300px" ></a>
+                        <span class="tags">Tag: </span>
+                    </li>                  
+				   {/foreach}
+				   {if $plandata.result[0].gallery}
+						{foreach from=$plandata.result[0].gallery key=k item=v}
+						 <li><a href="#" target="_blank">
+							<img src="{$v.image_full_path}" alt="" style="height:300px" ></a>
+							<span class="tags">Tag: </span>
+						</li>   
+						{/foreach}
+					{/if}	
+                  </ul>
+                </div>
+            </div> <!-- /.section -->
+        </div> <!-- /.theContent -->
+    </div> <!-- /.theContainer -->
+</div> <!-- /#theContainer -->

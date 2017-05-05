@@ -1,0 +1,79 @@
+ {if $user}
+	<div class="widget">
+    <div id="navigation">
+		<ul class="nav">
+			<li {if $pages==home || !$pages}class="active"{else}{/if}>
+				<a href="{$basedomain}home">
+					<i class="icons icon_home"></i>
+					<span>Home</span>
+					<i class="arrow-nav"></i>
+				</a>	    				
+			</li>				
+			<li {if $pages==inbox}class="active"{else}{/if}>			
+				<a href="{$basedomain}inbox">
+					<i class="icons icon_message"></i>
+					<span>Inbox</span>
+					<i class="arrow-nav"></i>
+				</a>	    					
+			</li>
+			<li {if $pages==plan}class="active"{else}{/if}>		
+				<a href="{$basedomain}plan">
+					<i class="icons icon_calendar"></i>
+					<span>Plan</span>
+					<i class="arrow-nav"></i>
+				</a>	    		  				
+			</li>
+			<li {if $pages==moderation}class="active"{else}{/if}>		
+				<a href="{$basedomain}moderation">
+					<i class="icons icon_megaphone"></i>
+					<span>Moderation</span>
+					<i class="arrow-nav"></i>
+				</a>	    	   				
+			</li>
+			<li {if $pages=='baperformance'}class="active"{else}{/if}>		
+				<a href="{$basedomain}baperformance">
+					<i class="icons icon_chart"></i>
+					<span>BA Performance</span>
+					<i class="arrow-nav"></i>
+				</a>	    	   				
+			</li>
+			<li {if $pages==gallery}class="active"{else}{/if}>		
+				<a href="{$basedomain}gallery">
+					<i class="icons icon_polaroid"></i>
+					<span>Gallery</span>
+					<i class="arrow-nav"></i>
+				</a>	    	   				
+			</li>
+			{if $user->leaderdetail->type>=100}
+			<li {if $pages==challenge}class="active"{else}{/if}>		
+				<a href="{$basedomain}challenge">
+					<i class="icons icon_challenges"></i>
+					<span>Challenge</span>
+					<i class="arrow-nav"></i>
+				</a>	    	   				
+			</li>
+			<li {if $pages==challenge}class="active"{else}class="dark-button"{/if}>
+				<a href="{$basedomain}challenge/create" class="button">
+					<span>Create Challenge</span>
+				</a>	    	   				
+			</li>
+			{/if}
+			{if $user->leaderdetail->type==3}
+			<li {if $pages=='brand'}class="active"{else}{/if}>
+				<a href="{$basedomain}brand">
+					<i class="icons icon_challenges"></i>
+					<span>Brand Page</span>
+					<i class="arrow-nav"></i>
+				</a>	    	   				
+			</li>
+			
+			<li {if $pages=='brand'}class="active"{else}class="dark-button"{/if}>		
+				<a href="{$basedomain}brand/create" class="button">
+					<span>Create Brand Post</span>
+				</a>	    	   				
+			</li>
+			{/if}
+		</ul>
+    </div> <!-- /#nav -->
+</div><!-- /.widget -->
+{/if}

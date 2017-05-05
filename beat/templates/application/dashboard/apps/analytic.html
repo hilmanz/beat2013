@@ -1,0 +1,110 @@
+<div class="section">
+	<ul class="columns-content page-content clearfix">
+    	<div class="the-title fl">
+        	<h2 class="red">Summary</h2>
+    	</div>
+    	<div class="menu_charts">
+            	<input type="text"  id="from" name="from"><span>-</span>
+            	<input type="text"  id="to" name="to" /><a href="#" class="calendar"></a>
+        </div>
+        <div class="boxBig">
+        	<div class="summary_box">
+            	<div class="summary_stats">
+                	<h4>Unique Visitors</h4>
+                    <h1 class="brown">{$dataDummy.unique}</h1>
+                </div>
+                <div class="summary_stats">
+                	<h4>Avg. Visit Duration</h4>
+                    <h1 class="brown">{$smarty.now|date_format:"%T"}</h1>
+                </div>
+            </div><!--end>summary_box-->
+            <div class="summary_box center_box">
+            	<div class="summary_center">
+                    <div class="summary_stats">
+                        <h4>Visits</h4>
+                        <h1 class="brown">{$dataDummy.visitors}</h1>
+                    </div>
+                    <div class="summary_stats">
+                        <h4>Avg. Time On Page</h4>
+                        <h1 class="brown">{$smarty.now|date_format:"%T"}</h1>
+                    </div>
+                </div>
+            </div><!--end>summary_box-->
+            <div class="summary_box">
+            	<div class="summary_stats">
+                	<h4>Pageviews</h4>
+                    <h1 class="brown">{$dataDummy.pageview}</h1>
+                </div>
+                <div class="summary_stats">
+                	<h4>Bounce Rate</h4>
+                    <h1 class="brown">{$smarty.now|date_format:"%T"}</h1>
+                </div>
+            </div><!--end>summary_box-->
+        </div><!--end.boxBig-->
+        <div class="accordion">                           
+            <h3 class=""><span>Visits</span>
+            <a class="icon_arrow expand" href="#">Click to Expand</a>
+            <a class="icon_arrow_grey hide2" href="#">hide</a> </h3>
+            <div class="acc_section">
+            	<div class="chart_section" id="visit">
+                </div>         
+            </div><!--end.acc_section-->
+            <h3 class=""><span>Pageviews</span>
+            <a class="icon_arrow expand" href="#">Click to Expand</a>
+            <a class="icon_arrow_grey hide2" href="#">hide</a> </h3>
+            <div class="acc_section">
+            	<div class="chart_section" id="pageview">
+                </div>    
+            </div><!--end.acc_section-->
+            <h3 class=""><span>Avg. Visit Duration</span>
+            <a class="icon_arrow expand" href="#">Click to Expand</a>
+            <a class="icon_arrow_grey hide2" href="#">hide</a> </h3>
+            <div class="acc_section">
+                <div class="chart_section" id="avgVisit">
+                </div>    
+            </div><!--end.acc_section-->
+            <h3 class=""><span>Avg. Time On Page</span>
+            <a class="icon_arrow expand" href="#">Click to Expand</a>
+            <a class="icon_arrow_grey hide2" href="#">hide</a> </h3>
+            <div class="acc_section">
+                <div class="chart_section" id="avgTimeonpage">
+                </div>    
+            </div><!--end.acc_section-->
+            <h3 class=""><span>Bounce Rate</span>
+            <a class="icon_arrow expand" href="#">Click to Expand</a>
+            <a class="icon_arrow_grey hide2" href="#">hide</a> </h3>
+            <div class="acc_section">
+                <div class="chart_section" id="bounceRate">
+                </div>    
+            </div><!--end.acc_section-->
+    	</div><!---end.accodrion-->
+    </ul><!---end.columns-content page-content clearfix-->
+</div><!--end.section-->
+
+<script type="text/javascript">
+
+		var data = {$loginData};
+	
+{literal}	
+$(function () {
+
+	console.log(data);
+	var tesData = new Array();
+	var labelData = new Array();		
+		
+    for (var dataDate in data){
+			tesData.push(parseInt(data[dataDate].total)); // coba['2013-01-01']['total']
+			labelData.push(String(dataDate));
+		}
+	    
+	gethighChart('line','test  Chart','visit',tesData,labelData,1,true);
+	gethighChart('line','test  Chart','pageview',tesData,labelData,1,true);
+	gethighChart('line','test  Chart','avgVisit',tesData,labelData,1,true);
+	gethighChart('line','test  Chart','avgTimeonpage',tesData,labelData,1,true);
+	gethighChart('line','test  Chart','bounceRate',tesData,labelData,1,true);
+	
+	//drillDownChart('column','test Chart','container',dataCoba,cateActivityGroup,1 ,false);
+	});
+		
+</script>
+{/literal}
